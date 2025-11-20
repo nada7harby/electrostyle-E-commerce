@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 210 12% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 210 12% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 12% 16%;
+
+    /* Brand color #006A67 = HSL(178, 100%, 21%) */
+    --primary: 178 100% 21%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Lighter teal for hover states */
+    --primary-hover: 178 85% 28%;
+    
+    /* Very light teal for backgrounds */
+    --primary-light: 178 60% 96%;
+
+    --secondary: 210 17% 95%;
+    --secondary-foreground: 210 12% 16%;
+
+    --muted: 210 17% 95%;
+    --muted-foreground: 210 10% 45%;
+
+    --accent: 178 60% 96%;
+    --accent-foreground: 178 100% 21%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 178 100% 21%;
+
+    --radius: 0.5rem;
+
+    /* Success color for stock/available status */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning for low stock */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 210 20% 12%;
+    --foreground: 210 17% 95%;
+
+    --card: 210 18% 15%;
+    --card-foreground: 210 17% 95%;
+
+    --popover: 210 18% 15%;
+    --popover-foreground: 210 17% 95%;
+
+    --primary: 178 80% 35%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-hover: 178 70% 42%;
+    --primary-light: 178 50% 18%;
+
+    --secondary: 210 15% 20%;
+    --secondary-foreground: 210 17% 95%;
+
+    --muted: 210 15% 20%;
+    --muted-foreground: 210 12% 60%;
+
+    --accent: 178 50% 18%;
+    --accent-foreground: 178 80% 35%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 25%;
+    --input: 210 15% 25%;
+    --ring: 178 80% 35%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .hover-lift {
+    @apply transition-smooth hover:-translate-y-1 hover:shadow-lg;
+  }
+}
